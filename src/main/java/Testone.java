@@ -19,6 +19,14 @@ public class Testone {
         driver.close();
 
         //test2
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("http://localhost:7080/login");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.findElement(By.id("username")).sendKeys("tomsmith");
+        driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
+        driver.findElement(By.className("radius")).submit();
+        driver.close();
 
 
 
