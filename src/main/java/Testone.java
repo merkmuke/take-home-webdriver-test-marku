@@ -19,14 +19,25 @@ public class Testone {
         driver.close();
 
         //test2
+        // Wrong pwd & username
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://localhost:7080/login");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.findElement(By.id("username")).sendKeys("tomsmith");
-        driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
+        driver.findElement(By.id("username")).sendKeys("tomsmith1");
+        driver.findElement(By.id("password")).sendKeys("SuperSecretPassword");
         driver.findElement(By.className("radius")).submit();
         driver.close();
+
+        //Test3
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("http://localhost:7080/checkboxes");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.findElement(By.id("username")).sendKeys("tomsmith1");
+        driver.findElement(By.id("password")).sendKeys("SuperSecretPassword");
+        driver.findElement(By.className("radius")).submit();
+        //driver.close();
 
 
 
